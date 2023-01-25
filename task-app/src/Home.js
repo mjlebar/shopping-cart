@@ -1,5 +1,12 @@
+import homeImage from "./images/home-image.jpg";
+
 const Home = () => {
-  return <h2>Welcome to the Zoo Shop</h2>;
+  return (
+    <div
+      className="homepage"
+      style={{ backgroundImage: `url(${homeImage})` }}
+    ></div>
+  );
 };
 
 export { Home };

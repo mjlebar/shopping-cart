@@ -1,5 +1,12 @@
+import aboutImage from "./images/about-image.jpg";
+
 const About = () => {
-  return <h2>Information about the Zoo Shop</h2>;
+  return (
+    <div
+      className="aboutpage"
+      style={{ backgroundImage: `url(${aboutImage})` }}
+    ></div>
+  );
 };
 
 export { About };
