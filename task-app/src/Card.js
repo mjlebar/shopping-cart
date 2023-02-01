@@ -1,7 +1,16 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 function Card(props) {
   return (
     <div className="Card">
-      <img loading="lazy" src={props.image} alt={`${props.name}`} />
+      <LazyLoadImage
+        className="animal-pic"
+        placeholderSrc={props.imageLQ}
+        src={props.image}
+        alt={`${props.name}`}
+        effect="blur"
+      />
       <p>{props.name}</p>
     </div>
   );

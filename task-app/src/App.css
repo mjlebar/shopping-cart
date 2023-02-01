@@ -60,7 +60,7 @@ header {
   justify-content: space-around;
 }
 
-.Card > img {
+.animal-pic {
   width: 225px;
   height: 200px;
   border-radius: 3px;
