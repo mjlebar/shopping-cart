@@ -12,6 +12,9 @@ function Card(props) {
         effect="blur"
       />
       <p>{props.name}</p>
+      <button onClick={props.updateCart} className={`${props.name}`}>
+        Add to Cart
+      </button>
     </div>
   );
 }
