@@ -8,8 +8,21 @@ const Home = () => {
   return (
     <div
       className="homepage"
-      style={{ backgroundImage: `url(${loaded || placeholder})` }}
-    ></div>
+      style={{
+        backgroundImage: `linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ), url(${loaded || placeholder})`,
+      }}
+    >
+      <p className="text">
+        Welcome to the Zoo Shop! Looking to start your own zoo, but not sure
+        where to get the creatures for it? We've got you covered! With a wide
+        variety of wildlife, and more to come, we're sure that we can help you
+        make a successful zoo. Check out our shop page to get started. Let's go
+        wild!
+      </p>
+    </div>
   );
 };
 

@@ -8,8 +8,24 @@ const About = () => {
   return (
     <div
       className="homepage"
-      style={{ backgroundImage: `url(${loaded || placeholder})` }}
-    ></div>
+      style={{
+        backgroundImage: `linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ), url(${loaded || placeholder})`,
+      }}
+    >
+      <p className="text">
+        This is my third project built in React. In this one, I used React
+        Router to allow navigation between pages, used lazy loading to help
+        speed up pages, and tried to focus on clean, simple design. All the
+        images with photographer attribution can be found on{" "}
+        <a href="https://unsplash.com/collections/9nYofq7NRZw/zoo-shop-project">
+          Unsplash
+        </a>
+        .
+      </p>
+    </div>
   );
 };
 

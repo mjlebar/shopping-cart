@@ -5,6 +5,7 @@ import { Home } from "./Home";
 import { About } from "./About";
 import { Shop } from "./Shop";
 import { useState } from "react";
+import { Sidebar } from "./Sidebar";
 
 function App() {
   const [total, setTotal] = useState(0);
@@ -25,6 +26,29 @@ function App() {
     Zebra: 0,
   });
 
+  const [sidebar, setSidebar] = useState("hidden");
+
+  const body = document.querySelector("body");
+
+  const openSidebar = (e) => {
+    console.log(e.target);
+    setSidebar("");
+    body.addEventListener("click", closeSidebar);
+  };
+  const closeSidebar = (e) => {
+    const src = e.target;
+    console.log(src);
+    if (
+      src.className === "close" ||
+      (src.className !== "cart" &&
+        src.className !== "sidebar" &&
+        src.parentNode.className !== "sidebar")
+    ) {
+      setSidebar("hidden");
+      body.removeEventListener("click", closeSidebar);
+    }
+  };
+
   return (
     <BrowserRouter>
       <header>The Zoo Shop</header>
@@ -40,8 +64,11 @@ function App() {
             <li>About</li>
           </Link>
         </ul>
-        <div className="cart">
-          <ShoppingCartIcon className="cart-icon"></ShoppingCartIcon>
+        <div className="cart" onClick={openSidebar}>
+          <ShoppingCartIcon
+            pointerEvents="none"
+            className="cart-icon"
+          ></ShoppingCartIcon>
           {total > 0 ? <p className="cart-counter">{total}</p> : null}
         </div>
       </nav>
@@ -60,6 +87,7 @@ function App() {
         ></Route>
         <Route path="/about" element={<About></About>}></Route>
       </Routes>
+      <Sidebar style={sidebar}></Sidebar>
     </BrowserRouter>
   );
 }
