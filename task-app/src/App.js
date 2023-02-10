@@ -109,7 +109,7 @@ function App() {
   // resets the cart
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <header className="page">The Zoo Shop</header>
       <nav className="navigation page">
         <ul>
