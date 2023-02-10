@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.3ce780ed.css",
-    "main.js": "/shopping-cart/static/js/main.49e73d7f.js",
+    "main.js": "/shopping-cart/static/js/main.c13da681.js",
     "static/media/wildlife-lizard.jpg": "/shopping-cart/static/media/wildlife-lizard.59ff918cb0c68aab23d4.jpg",
     "static/media/wildlife-zebra.jpg": "/shopping-cart/static/media/wildlife-zebra.0953e57738018a94bf7b.jpg",
     "static/media/wildlife-lion.jpg": "/shopping-cart/static/media/wildlife-lion.0d28920a244fe04ed7b9.jpg",
@@ -36,10 +36,10 @@
     "static/media/wildlife-giraffe-lq.jpg": "/shopping-cart/static/media/wildlife-giraffe-lq.1566c02f214c815b475c.jpg",
     "index.html": "/shopping-cart/index.html",
     "main.3ce780ed.css.map": "/shopping-cart/static/css/main.3ce780ed.css.map",
-    "main.49e73d7f.js.map": "/shopping-cart/static/js/main.49e73d7f.js.map"
+    "main.c13da681.js.map": "/shopping-cart/static/js/main.c13da681.js.map"
   },
   "entrypoints": [
     "static/css/main.3ce780ed.css",
-    "static/js/main.49e73d7f.js"
+    "static/js/main.c13da681.js"
   ]
 }
