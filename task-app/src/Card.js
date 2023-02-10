@@ -18,6 +18,6 @@ function Card(props) {
     </div>
   );
 }
-// the individual cards in the grid - contains a logo and an album name, when clicked calls the checkAlbum function in app
+// the individual cards in the shop grid - shows an animal and allows us to add it to the cart. The placeholder and effect allow the image to lazy load, which significantly speeds up the page
 
 export { Card };

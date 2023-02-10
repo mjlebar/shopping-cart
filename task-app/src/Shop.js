@@ -50,6 +50,7 @@ const Shop = (props) => {
     const animal = e.target.className;
     props.updateCart(animal, 1);
   }
+  // we pass this to each animal card - when the add to cart button for that animal is clicked, the updateCart function in App.js is called appropriately
 
   return (
     <div className="shoppage page">
@@ -67,5 +68,6 @@ const Shop = (props) => {
     </div>
   );
 };
+// this is our shop, which is basically just a grid of cards of animals
 
 export { Shop };

@@ -8,7 +8,6 @@ import { useState } from "react";
 import { Sidebar } from "./Sidebar";
 
 function App() {
-  const [totalItems, setTotalItems] = useState(0);
   const cartStart = {
     Cheetah: { quantity: 0, price: 49999.99 },
     Eagle: { quantity: 0, price: 79999.99 },
@@ -25,24 +24,38 @@ function App() {
     Tiger: { quantity: 0, price: 69999.99 },
     Zebra: { quantity: 0, price: 39999.99 },
   };
+  // the default empty cart - I store it in a variable to make it easy to reset the cart later on
+
+  const [totalItems, setTotalItems] = useState(0);
+  // total number of items in the cart - this is the icon that shows up on the cart logo
   const [cart, setCart] = useState(cartStart);
+  // the cart itself
   const [totalCost, setTotalCost] = useState(0);
+  // the total cost of everything in the cart - this shows up in the sidebar cart
 
   const [sidebar, setSidebar] = useState("hidden");
+  // the sidebar, which is where the cart is displayed and the user canc check out. starts out hidden by default
 
   const body = document.querySelector("body");
+  // we are going to add and remove event listeners for closing the sidebar to the body (ie everything in the document) in openSidebar and closeSidebar below
   const headLinks = document.querySelectorAll(".head-link");
+  // we want to make it so you can't click around the page when you have the sidebar open, so these are selected to disable and enbabl pointer click events
 
-  const openSidebar = (e) => {
+  const openSidebar = () => {
     setSidebar("");
+    // unhides the sidebar
     body.addEventListener("click", closeSidebar);
+    // allows us to close the sidebar by clicking almost everything
     const blurrable = document.querySelectorAll(".page");
+    // everything visible the page but the sidebar is in a container with class blurrable. We declare this within the functions because *what* is visibe on the page varies - we want to select at the time the sidebar is opened, rather than when the page is intialized
     for (const entry of blurrable) {
       entry.style.filter = "blur(2px)";
     }
+    // so this makes everything but the sidebar out of focus
     for (const link of headLinks) {
       link.style.pointerEvents = "none";
     }
+    // and this makes sure we can't click the links
   };
 
   const closeSidebar = (e) => {
@@ -51,12 +64,15 @@ function App() {
     const src = e.target;
     const cart = document.querySelector(".cart");
     const checkout = document.querySelector(".checkout");
+    // we select these because we only want to close the sidebar under certain conditions. These containers allow us to distinguish those conditions
 
     if (
       (!sidebar.contains(src) ||
         close.contains(src) ||
         checkout.contains(src)) &&
+      // this conditions checks to make sure either we're not in the sidebar, or if we are, we clicked one of the two buttons in the sidebar that should close the sidebar (the close button or the checkout button)
       !cart.contains(src)
+      // we also want to make sure we're not clicking the cart icon that opens the sidebar - otherwise it instantly closes every time we click it
     ) {
       setSidebar("hidden");
       body.removeEventListener("click", closeSidebar);
@@ -67,10 +83,12 @@ function App() {
       for (const link of headLinks) {
         link.style.pointerEvents = "";
       }
+      // just reverse everything we did in open sidebar
     }
   };
 
   function updateCart(animal, change) {
+    // passed an animal, and the amount by which the quantity of that animal in our cart should change. Modifies the state appropriately. This is passed as a prop to through Shop.js to Card.js (where we can modify by pressing add to cart on an entry) and through Siebar.js to CartEntry.js (where we can modify by changing the quanity in our cart)
     setCart({
       ...cart,
       [animal]: {
@@ -88,6 +106,7 @@ function App() {
     setTotalCost(0);
     setCart(cartStart);
   }
+  // resets the cart
 
   return (
     <BrowserRouter>
@@ -110,6 +129,7 @@ function App() {
             className="cart-icon"
           ></ShoppingCartIcon>
           {totalItems > 0 ? <p className="cart-counter">{totalItems}</p> : null}
+          {/* we only want to render the number of items in the cart if there is at least one item in the cart */}
         </div>
       </nav>
       <Routes>

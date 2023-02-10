@@ -3,6 +3,16 @@
   padding: 0px;
 }
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* sets the fonts*/
+
 .navigation {
   background-color: #34495e;
   width: 100vw;
@@ -12,6 +22,7 @@
   font-size: large;
   align-items: center;
 }
+
 .navigation > ul {
   padding: 0px;
   display: flex;
@@ -27,11 +38,14 @@
   align-items: center;
   height: 100%;
 }
+/* this is the div that contains the cart icon */
 
 .cart-icon {
   margin-right: -10px;
   width: 35px;
 }
+/* the margin right helps with the cart counter */
+
 .cart-counter {
   margin-left: -5px;
   margin-bottom: -5px;
@@ -44,14 +58,17 @@
   align-items: center;
   font-size: small;
 }
+/* this is the little counter that sits on top of the cart icon. The negative margins are so that it sits nice and close */
 
 .head-link {
   flex: auto;
   color: white;
   text-decoration: none;
+  /* removes default underlining */
   display: flex;
   justify-content: center;
 }
+/* the links in the header */
 
 header {
   background-color: #2c3e50;
@@ -75,6 +92,7 @@ header {
   display: flex;
   align-items: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  /* this darkens the image slightly, which makes text MUCH easier to read */
 }
 
 .shoppage {
@@ -92,6 +110,7 @@ header {
   height: 200px;
   border-radius: 3px;
   object-fit: cover;
+  /* this makes sure the animal pics all end up the same size even if the original pictures are not */
 }
 
 .Card > p {
@@ -101,6 +120,7 @@ header {
   align-items: center;
   justify-content: center;
 }
+/* this correctly aligns and styles the animal's names on the cards */
 
 .Card {
   padding-top: 10px;
@@ -114,6 +134,8 @@ header {
   align-items: center;
   justify-content: space-evenly;
   border-radius: 5px;
+  max-height: 350px;
+  min-height: 275px;
 }
 
 .text {
@@ -123,18 +145,17 @@ header {
   text-align: center;
   margin: 25px;
 }
+/* the text on the about and home pages */
 
 a {
   color: white;
 }
+/* the unsplash link on the about page */
 
 button {
   padding: 5px;
 }
 
-.sidebar > p {
-  height: 100%;
-}
 .sidebar {
   background-color: #ecf0f1;
   border-left: 8px solid #3498db;
@@ -143,11 +164,11 @@ button {
   position: fixed;
   height: 100vh;
   width: 40vw;
+  /* anchors the sidebar to the top right of the page and sizes it appropriately */
   display: grid;
   grid-template-columns: 5fr 1fr;
   grid-template-rows: 1fr 8fr 2fr;
   grid-auto-flow: row;
-  transition-property: visibility;
   min-width: 250px;
 }
 
@@ -157,6 +178,7 @@ button {
   align-items: center;
   display: flex;
 }
+/* the div that contains the button to close the sidebar */
 
 .close > svg {
   height: 40px;
@@ -200,6 +222,11 @@ button {
 
 .sidebar-title {
   font-size: x-large;
+}
+
+.sidebar-title,
+.close {
+  margin-top: 10px;
 }
 
 .total {

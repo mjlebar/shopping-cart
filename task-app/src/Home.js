@@ -15,6 +15,7 @@ const Home = () => {
       ), url(${loaded || placeholder})`,
       }}
     >
+      {/* the style here just adds a background image, and blurs it so that it lazy loads */}
       <p className="text">
         Welcome to the Zoo Shop! Looking to start your own zoo, but not sure
         where to get the creatures for it? We've got you covered! With a wide
@@ -28,4 +29,4 @@ const Home = () => {
 
 export { Home };
 
-// idea for use of loaded variable comes from Jesper N on stack overflow, as does the code for the useProgressiveImage hook: https://stackoverflow.com/questions/51607043/how-to-lazy-load-the-background-image-inside-the-inline-style-property-react
+// idea for use of the loaded variable to lazy load the background image comes from Jesper N on stack overflow, as does the code for the useProgressiveImage hook: https://stackoverflow.com/questions/51607043/how-to-lazy-load-the-background-image-inside-the-inline-style-property-react

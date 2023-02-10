@@ -15,11 +15,13 @@ const About = () => {
       ), url(${loaded || placeholder})`,
       }}
     >
+      {/* the style here just adds a background image, and blurs it so that it lazy loads */}
       <p className="text">
         This is my third project built in React. In this one, I used React
         Router to allow navigation between pages, used lazy loading to help
         speed up pages, and tried to focus on clean, simple design. All the
-        images with photographer attribution can be found on{" "}
+        images with photographer attribution can be found on my "Zoo Shop
+        Project" page on{" "}
         <a href="https://unsplash.com/collections/9nYofq7NRZw/zoo-shop-project">
           Unsplash
         </a>
@@ -31,4 +33,4 @@ const About = () => {
 
 export { About };
 
-// idea for use of loaded variable comes from Jesper N on stack overflow, as does the code for the useProgressiveImage hook: https://stackoverflow.com/questions/51607043/how-to-lazy-load-the-background-image-inside-the-inline-style-property-react
+// idea for use of the loaded variable to lazy load the background image comes from Jesper N on stack overflow, as does the code for the useProgressiveImage hook: https://stackoverflow.com/questions/51607043/how-to-lazy-load-the-background-image-inside-the-inline-style-property-react

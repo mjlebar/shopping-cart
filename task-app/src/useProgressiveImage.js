@@ -14,4 +14,4 @@ const useProgressiveImage = (src) => {
 
 export { useProgressiveImage };
 
-// this code was written by Jesper N on Stack overflow: https://stackoverflow.com/questions/51607043/how-to-lazy-load-the-background-image-inside-the-inline-style-property-react
+// this code was written by Jesper N on Stack overflow: https://stackoverflow.com/questions/51607043/how-to-lazy-load-the-background-image-inside-the-inline-style-property-react. It allows me to lazy load the iamges on the home and about screen. Thanks Jasper!
