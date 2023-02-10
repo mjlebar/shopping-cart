@@ -82,7 +82,7 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   height: 82vh;
-  width: 100%;
+  width: 100vw;
   overflow: scroll;
   justify-content: space-around;
 }
@@ -136,16 +136,89 @@ button {
   height: 100%;
 }
 .sidebar {
-  background-color: red;
+  background-color: #ecf0f1;
+  border-left: 8px solid #3498db;
   top: 0px;
   right: 0px;
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 40vw;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr 8fr 2fr;
+  grid-auto-flow: row;
+  transition-property: visibility;
+  min-width: 250px;
+}
+
+.close {
+  grid-column: 2;
+  justify-content: center;
+  align-items: center;
   display: flex;
-  flex-direction: row;
 }
 
 .close > svg {
-  height: 25px;
+  height: 40px;
+}
+
+.cart-entries {
+  padding-block: 25px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-content: space-between;
+  align-items: flex-start;
+  margin: 15px;
+  border-block: 2px solid black;
+}
+
+.checkout,
+.cart-entries,
+.total {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.checkout-btn {
+  height: 75px;
+  font-size: large;
+  border-radius: 15px;
+  width: 75%;
+  margin: 25px;
+  font-weight: 800;
+}
+
+.sidebar-text,
+.checkout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.sidebar-title {
+  font-size: x-large;
+}
+
+.total {
+  font-size: large;
+}
+
+.cart-entry {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 3fr;
+  justify-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.cart-entry-header {
+  font-weight: 700;
+  font-size: large;
+}
+
+input {
+  width: 100%;
 }

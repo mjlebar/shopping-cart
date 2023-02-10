@@ -47,16 +47,12 @@ const Shop = (props) => {
   };
 
   function updateCart(e) {
-    const index = e.target.className;
-    props.setCart({
-      ...props.cart,
-      [index]: props.cart[index] + 1,
-    });
-    props.setTotal(props.total + 1);
+    const animal = e.target.className;
+    props.updateCart(animal, 1);
   }
 
   return (
-    <div className="shoppage">
+    <div className="shoppage page">
       {Object.entries(animals).map(([key, value]) => {
         return (
           <Card

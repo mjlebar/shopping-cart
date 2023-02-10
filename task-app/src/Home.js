@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div
-      className="homepage"
+      className="homepage page"
       style={{
         backgroundImage: `linear-gradient(
         rgba(0, 0, 0, 0.5),
